@@ -1,4 +1,4 @@
-package com.hobogames.gamesetup.game3D;
+package com.hobogames.GameSetup.game3D;
 
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.math.collision.BoundingBox;

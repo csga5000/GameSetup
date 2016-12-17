@@ -1,4 +1,4 @@
- package com.hobogames.gamesetup;
+ package com.hobogames.GameSetup;
 
 import com.badlogic.gdx.math.Vector2;
 
@@ -16,7 +16,7 @@ public class GameProperties {
 	 */
 	public String audiodir = "audio/";
 	/**
-	 * Must be called if you use the com.hobogames.gamesetup.ScreenLoading.  This texture belongs directly in the assets directory, and loaded first as Texture GameMain.loadingScreenBg.
+	 * Must be called if you use the com.hobogames.GameSetup.ScreenLoading.  This texture belongs directly in the assets directory, and loaded first as Texture GameMain.loadingScreenBg.
 	 */
 	public String loadingScreenBg = "";
 	/**
@@ -24,7 +24,7 @@ public class GameProperties {
 	 */
 	public String musicFiles[] = {};
 	/**
-	 * The default viewport size for the camera used for all com.hobogames.gamesetup Screens
+	 * The default viewport size for the camera used for all com.hobogames.GameSetup Screens
 	 */
 	public Vector2 viewsize = new Vector2(100,66);
 	/**

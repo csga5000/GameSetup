@@ -1,4 +1,4 @@
-package com.hobogames.gamesetup.game3D;
+package com.hobogames.GameSetup.game3D;
 
 import java.util.ArrayList;
 
@@ -10,10 +10,10 @@ import com.badlogic.gdx.graphics.g3d.ModelBatch;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
-import com.hobogames.gamesetup.GameMain;
-import com.hobogames.gamesetup.GameObject;
-import com.hobogames.gamesetup.ScreenGame;
-import com.hobogames.gamesetup.TodoAction;
+import com.hobogames.GameSetup.GameMain;
+import com.hobogames.GameSetup.GameObject;
+import com.hobogames.GameSetup.ScreenGame;
+import com.hobogames.GameSetup.TodoAction;
 
 
 public abstract class ScreenGame3D extends ScreenGame{

@@ -1,4 +1,4 @@
-package com.hobogames.gamesetup;
+package com.hobogames.GameSetup;
 
 public interface InputHandler {
 	public void positionUpdate(float mx, float my);

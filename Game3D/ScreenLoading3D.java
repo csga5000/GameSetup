@@ -1,6 +1,6 @@
-package com.hobogames.gamesetup.game3D;
+package com.hobogames.GameSetup.game3D;
 
-import com.hobogames.gamesetup.ScreenLoading;
+import com.hobogames.GameSetup.ScreenLoading;
 
 public abstract class ScreenLoading3D extends ScreenLoading{
 	public void start(){

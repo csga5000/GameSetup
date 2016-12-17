@@ -1,4 +1,4 @@
-package com.hobogames.gamesetup.Shapes;
+package com.hobogames.GameSetup.Shapes;
 
 import com.badlogic.gdx.math.Vector2;
 

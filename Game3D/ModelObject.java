@@ -1,4 +1,4 @@
-package com.hobogames.gamesetup.game3D;
+package com.hobogames.GameSetup.game3D;
 
 import java.util.HashMap;
 import java.util.Map;

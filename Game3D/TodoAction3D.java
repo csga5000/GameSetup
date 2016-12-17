@@ -1,4 +1,4 @@
-package com.hobogames.gamesetup.game3D;
+package com.hobogames.GameSetup.game3D;
 
 public class TodoAction3D {
 	public static final int ADD_OBJECT = 0;

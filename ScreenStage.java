@@ -1,4 +1,4 @@
-package com.hobogames.gamesetup;
+package com.hobogames.GameSetup;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.scenes.scene2d.Stage;

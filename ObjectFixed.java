@@ -1,4 +1,4 @@
-package com.hobogames.gamesetup;
+package com.hobogames.GameSetup;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 

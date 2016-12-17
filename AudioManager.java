@@ -1,4 +1,4 @@
-package com.hobogames.gamesetup;
+package com.hobogames.GameSetup;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
