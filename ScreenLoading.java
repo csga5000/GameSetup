@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public abstract class ScreenLoading implements Screen{	
@@ -23,6 +23,9 @@ public abstract class ScreenLoading implements Screen{
 	int numAud, numAsset;
 	String fontName = null;
 	protected float scale = .03f;
+
+	GlyphLayout layout;
+
 	public ScreenLoading(){
 		this("");
 	}
@@ -80,8 +83,8 @@ public abstract class ScreenLoading implements Screen{
 			if(bg != null)
 				batch.draw(bg, 0,0,cam.viewportWidth,cam.viewportHeight);
 			if(msg != null && font != null){
-				TextBounds r = font.getBounds(msg);
-				font.draw(batch, msg, WIDTH/2-r.width/2, HEIGHT/2+r.height/2);
+				layout.setText(font, msg);
+				font.draw(batch, msg, WIDTH/2-layout.width/2, HEIGHT/2+layout.height/2);
 			}
 		batch.end();
 	}
@@ -102,7 +105,7 @@ public abstract class ScreenLoading implements Screen{
 			if(!bgFile.equals(""))
 				bg = new Texture(Gdx.files.internal(bgFile));
 		batch = new SpriteBatch();
-		font.setScale(scale);
+		font.getData().setScale(scale);
 		font.setColor(1,1,1,1);
 		font.setUseIntegerPositions(false);
 		start();
