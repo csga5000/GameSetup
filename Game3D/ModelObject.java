@@ -14,7 +14,7 @@ import com.badlogic.gdx.math.collision.BoundingBox;
 
 public class ModelObject {
 	public static String modelsFolder = "/data/models";
-	public static Map<String, ModelType> types = new HashMap<String,ModelType>();
+	public static Map<String, ModelType> types = new HashMap<>();
 	
 	ModelInstance model;
 	int ID;
@@ -46,7 +46,7 @@ public class ModelObject {
 	 * Calls ModelObject(String name, pos.x, pos.y, pos.z)
 	 * @param modelName The name of the model.  (Do not include extension or path)
 	 * @param pos Position of object
-	 * @see #ModelObject(String, float, float, float)
+	 * @see #ModelObject(ScreenGame3D, String, float, float, float)
 	 */
 	public ModelObject(ScreenGame3D screen, String modelName, Vector3 pos){
 		this(screen,modelName,pos.x,pos.y,pos.z);
@@ -54,8 +54,9 @@ public class ModelObject {
 	/**
 	 * Calls ModelObject(String name, pos.x, pos.y, pos.z)
 	 * @param modelName The name of the model.  (Do not include extension or path)
-	 * @param pos Position of object
-	 * @see #ModelObject(String, float, float, float)
+	 * @param x Position x of object
+	 * @param y Position x of object
+	 * @param z Position x of object
 	 */
 	public ModelObject(ScreenGame3D screen, String modelName, float x, float y, float z){
 		this.screen = screen;
