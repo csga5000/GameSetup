@@ -30,7 +30,6 @@ public abstract class GameMain extends Game {
 		instance = this;
 		multiplexer = new InputMultiplexer();
 		input = new InputManager(1,1);
-		inputDetect = new GestureDetector(input);
 	}
 	public static Texture getScreenLoadingBg(){
 		if(screenLoadingBg == null)
@@ -38,6 +37,8 @@ public abstract class GameMain extends Game {
 		return screenLoadingBg;
 	}
 	public void init(AssetManager man){
+		inputDetect = new GestureDetector(input);
+
 		DataManager.getInstance(properties.dataManagerConstructorArgs);
 		Gdx.input.setCatchBackKey(true);
 		Gdx.input.setInputProcessor(multiplexer);

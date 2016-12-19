@@ -147,6 +147,9 @@ public class InputManager implements InputProcessor, GestureListener{
 			Vector2 pointer1, Vector2 pointer2) {
 		return false;
 	}
+	@Override
+	public void pinchStop() {}
+
 	
 	////Key Input Methods////
 	@Override
