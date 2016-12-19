@@ -31,14 +31,14 @@ public class ObjectFixed extends GameObject{
 		depth = 100;
 		this.setCentered(x, y);
 	}
-	
+
 	public void drawTex(SpriteBatch batch){
 		batch.draw(regions[texindex], 
 				bounds.getX()+game.camera.position.x-game.getViewWidth()/2,
 				bounds.getY()+game.camera.position.y-game.getViewHeight()/2,
 				center.x, center.y, 		//Origin x, y
 				bounds.width, bounds.height, 
-				1, 1, 						//Scale x, y
-				angle);					//Rotation angle, clockwise
+				1, 1, //Scale x, y
+				angle); //Rotation angle, clockwise
 	}
 }

@@ -37,6 +37,7 @@ public abstract class ScreenGame implements Screen{
 	
 	protected float bgmovepercent = 0;
 	private float vwidth, vheight;
+	private float zoomw = 1, zoomh = 1;
 	public float ppux = 1, ppuy = 1;//Pixles per unit x, and y
 	public abstract void preconfig();
 
@@ -168,28 +169,42 @@ public abstract class ScreenGame implements Screen{
 	public abstract void onUpdate(float delta);
 	@Override
 	public void resize(int width, int height) {
-		if(autosize != NOT_AUTO){
-			if(autosize == AUTO_HEIGHT){
-				camera.viewportWidth = vwidth = GameMain.properties.viewsize.x;
-				float oldh = vheight;
-				camera.viewportHeight = vheight = vwidth*(height*1f/width);
-				camera.position.y += (oldh-vheight)/2;
-			}else if(autosize == AUTO_WIDTH){
-				camera.viewportHeight = vheight = GameMain.properties.viewsize.y;
-				float oldw = vwidth;
-				camera.viewportWidth= vwidth = vheight*(width*1f/height);
-				camera.position.x += (oldw-vwidth)/2;
-			}
-			camera.update();
-			((StretchViewport)stage.getViewport()).setWorldSize(vwidth, vheight);
-			stage.getViewport().update(width, height);
-			determineBgIndexes();
+		if(autosize == AUTO_HEIGHT){
+			camera.viewportWidth = vwidth = GameMain.properties.viewsize.x/zoomw;
+			float oldh = vheight;
+			camera.viewportHeight = vheight = vwidth*(height*1f/width);
+			camera.position.y += (oldh-vheight)/2;
+		}else if(autosize == AUTO_WIDTH){
+			camera.viewportHeight = vheight = GameMain.properties.viewsize.y/zoomh;
+			float oldw = vwidth;
+			camera.viewportWidth= vwidth = vheight*(width*1f/height);
+			camera.position.x += (oldw-vwidth)/2;
+		} else if (autosize == NOT_AUTO){
+			camera.viewportWidth = vwidth = GameMain.properties.viewsize.x/zoomw;
+			camera.viewportHeight = vheight = GameMain.properties.viewsize.y/zoomh;
 		}
+		camera.update();
+		stage.getViewport().setWorldSize(vwidth, vheight);
+		stage.getViewport().update(width, height);
+		determineBgIndexes();
+
 		ppux = width/camera.viewportWidth;
 		ppuy = height/camera.viewportHeight;
 		InputManager.ppux = ppux;
 		InputManager.ppuy = ppuy;
 	}
+	public void setZoom(float x, float y) {
+		zoomw = x;
+		zoomh = y;
+		resize(Gdx.app.getGraphics().getWidth(), Gdx.app.getGraphics().getHeight());
+	}
+	public float getZoomw() {
+		return zoomw;
+	}
+	public float getZoomh() {
+		return zoomh;
+	}
+
 	@Override
 	public void show() {
 		camera = new OrthographicCamera(vwidth,vheight);
