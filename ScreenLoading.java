@@ -24,7 +24,7 @@ public abstract class ScreenLoading implements Screen{
 	String fontName = null;
 	protected float scale = .03f;
 
-	GlyphLayout layout;
+	GlyphLayout layout = new GlyphLayout();
 
 	public ScreenLoading(){
 		this("");
