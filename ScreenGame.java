@@ -69,12 +69,15 @@ public abstract class ScreenGame implements Screen{
 		if(updateObjects){
 			updateObjects(delta);
 		}
+		handleActions();
+		onUpdate(delta);
+		drawEverything();
+	}
+	protected void handleActions() {
 		while(actions.size() > 0){
 			handleAction(actions.get(0));
 			actions.remove(0);
 		}
-		onUpdate(delta);
-		drawEverything();
 	}
 	protected void updateObjects(float delta){
 		for(GameObject obj : objects)
