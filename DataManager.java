@@ -138,6 +138,7 @@ public class DataManager {
 	}
 
 	public void flush(){
+		put();
 		prefs.flush();
 	}
 	protected DataManager(){
