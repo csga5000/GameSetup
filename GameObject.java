@@ -69,6 +69,8 @@ public class GameObject {
 		setCentered(x,y);
 		if(gravity.len2()>0)
 			applyGroundFric = true;
+
+		angle = 0;
 	}
 	/**
 	 * Converts the String[] texs to a TextureRegion[], then calls GameObject(ScreenGame game, TextureRegion texs[], float x, float y, float width, float height)
@@ -280,12 +282,15 @@ public class GameObject {
 			bounds.y+=sp;
 		}else{
 			speeds.y = 0;
-			if(sp < 0){
-				for(GameObject obj : cols){
+			boolean down = sp <= 0;
+			if (Math.abs(sp) < 0.1f) {//At these slow speeds, it's more reliable to go off of relative position to object, since it's unlikely we "passed through" it
+				down = cols.get(0).getCenterY() < getCenterY();
+			}
+			for(GameObject obj : cols){
+				if(down){
 					bounds.y = Math.max(bounds.y, obj.getCTop()-colmask.getY()+reboundfactor);
 				}
-			}else{
-				for(GameObject obj : cols){
+				else{
 					bounds.y = Math.min(bounds.y, obj.getCBottom()-colmask.getY()-colmask.getHeight()-reboundfactor);
 				}
 			}
